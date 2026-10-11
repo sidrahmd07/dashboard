@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA | AI/ML Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="aiml-dashboard.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND
+         ===================================================== -->
+
+    <div class="background-grid"></div>
+    <div class="noise"></div>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+
+    <!-- =====================================================
+         INTRO SCREEN
+         ===================================================== -->
+
+    <section class="intro-screen" id="introScreen">
+
+        <div class="intro-grid"></div>
+
+        <div class="intro-content">
+
+            <div class="intro-small">
+                NEXORA STUDENT SYSTEM
+            </div>
+
+            <div class="intro-logo">
+                NEXORA
+            </div>
+
+            <div class="intro-subtitle">
+                AI / ML LEARNING SECTOR
+            </div>
+
+            <div class="portal">
+
+                <div class="portal-ring ring-one"></div>
+                <div class="portal-ring ring-two"></div>
+                <div class="portal-ring ring-three"></div>
+
+                <div class="portal-core">
+                    NX
+                </div>
+
+            </div>
+
+            <div class="boot-text">
+                INITIALIZING STUDENT SYSTEM
+            </div>
+
+            <div class="boot-bar">
+                <div id="bootProgress"></div>
+            </div>
+
+            <div class="boot-percent" id="bootPercent">
+                0%
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-symbol">
+                NX
+            </div>
+
+            <div>
+                <div class="brand-name">
+                    NEXORA
+                </div>
+
+                <div class="brand-tag">
+                    STUDENT SYSTEM
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="nav-center">
+
+            <span class="nav-sector">
+                SECTOR
+            </span>
+
+            <span class="nav-divider">
+                /
+            </span>
+
+            <span class="nav-current">
+                AI / ML
+            </span>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <div class="xp-display">
+
+                <span class="xp-label">
+                    XP
+                </span>
+
+                <span id="xpValue">
+                    0
+                </span>
+
+            </div>
+
+            <button
+                class="nav-button"
+                onclick="showDashboard()">
+                DASHBOARD
+            </button>
+
+            <button
+                class="nav-button"
+                onclick="showProfile()">
+                PROFILE
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         DASHBOARD PAGE
+         ===================================================== -->
+
+    <main id="dashboardPage" class="page active">
+
+        <div class="dashboard-wrapper">
+
+            <div class="section-label">
+                NEXORA / STUDENT PORTAL
+            </div>
+
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <div class="system-status">
+
+                        <span class="status-dot"></span>
+
+                        SYSTEM ONLINE
+
+                    </div>
+
+                    <h1>
+                        FIND
+                        <br>
+                        YOUR
+                        <br>
+                        <span>PATH.</span>
+                    </h1>
+
+                    <p>
+                        Enter the AI / ML learning sector and build
+                        your technical journey level by level.
+                    </p>
+
+                    <button
+                        class="primary-button"
+                        onclick="openAIML()">
+
+                        ENTER AI / ML
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="hud-card">
+
+                    <div class="hud-title">
+                        STUDENT SYSTEM
+                    </div>
+
+                    <div class="hud-sector">
+                        AI / ML
+                    </div>
+
+                    <div class="hud-line"></div>
+
+                    <div class="hud-row">
+
+                        <span>
+                            LEVELS
+                        </span>
+
+                        <strong>
+                            10
+                        </strong>
+
+                    </div>
+
+                    <div class="hud-row">
+
+                        <span>
+                            COMPLETED
+                        </span>
+
+                        <strong id="dashboardCompleted">
+                            0 / 10
+                        </strong>
+
+                    </div>
+
+                    <div class="hud-row">
+
+                        <span>
+                            PROGRESS
+                        </span>
+
+                        <strong
+                            class="green-text"
+                            id="dashboardProgress">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="hud-row">
+
+                        <span>
+                            XP
+                        </span>
+
+                        <strong
+                            class="green-text"
+                            id="dashboardXP">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 AI/ML SECTOR CARD
+                 ================================================= -->
+
+            <section class="sector-card">
+
+                <div class="sector-card-top">
+
+                    <div>
+
+                        <div class="card-label">
+                            ACTIVE SECTOR
+                        </div>
+
+                        <h2>
+                            Artificial Intelligence /
+                            Machine Learning
+                        </h2>
+
+                        <p>
+                            Your structured AI / ML learning path.
+                        </p>
+
+                    </div>
+
+                    <div class="sector-symbol">
+                        AI
+                    </div>
+
+                </div>
+
+
+                <div class="sector-card-bottom">
+
+                    <div class="mini-stat">
+
+                        <span>
+                            LEVELS
+                        </span>
+
+                        <strong>
+                            10
+                        </strong>
+
+                    </div>
+
+                    <div class="mini-stat">
+
+                        <span>
+                            COMPLETED
+                        </span>
+
+                        <strong id="sectorCompleted">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="mini-stat">
+
+                        <span>
+                            PROGRESS
+                        </span>
+
+                        <strong id="sectorProgress">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <button
+                        class="outline-button"
+                        onclick="openAIML()">
+
+                        OPEN ROADMAP
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 MENTOR
+                 ================================================= -->
+
+            <section class="mentor-card">
+
+                <div class="mentor-icon">
+                    AI
+                </div>
+
+                <div class="mentor-info">
+
+                    <div class="card-label">
+                        AI / ML MENTOR
+                    </div>
+
+                    <h3>
+                        MENTOR — TO BE ANNOUNCED
+                    </h3>
+
+                    <p>
+                        Mentor information will be updated
+                        by the NEXORA administration.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         AI/ML ROADMAP PAGE
+         ===================================================== -->
+
+    <main id="aimlPage" class="page">
+
+        <div class="aiml-wrapper">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="section-label">
+                        NEXORA / AI / ML
+                    </div>
+
+                    <h1>
+                        AI / <span>ML</span>
+                    </h1>
+
+                    <p>
+                        Select a level to reveal its concept.
+                        Access requires the level password.
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-hud">
+
+                    <div>
+
+                        <span>
+                            LEVELS
+                        </span>
+
+                        <strong>
+                            10
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            COMPLETED
+                        </span>
+
+                        <strong id="roadmapCompleted">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PROGRESS
+                        </span>
+
+                        <strong id="roadmapProgress">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ROADMAP
+                 ================================================= -->
+
+            <section class="roadmap-container">
+
+                <div class="roadmap-line"></div>
+
+
+                <!-- CONNECTORS -->
+
+                <div class="connector connector-1"></div>
+                <div class="connector connector-2"></div>
+                <div class="connector connector-3"></div>
+                <div class="connector connector-4"></div>
+                <div class="connector connector-5"></div>
+                <div class="connector connector-6"></div>
+                <div class="connector connector-7"></div>
+                <div class="connector connector-8"></div>
+                <div class="connector connector-9"></div>
+
+
+                <!-- LEVEL 1 -->
+
+                <div class="roadmap-level level-left level-1">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(1)">
+                        01
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-1">
+
+                        <div class="reveal-tag">
+                            LEVEL 01
+                        </div>
+
+                        <h2>
+                            Python Foundation
+                        </h2>
+
+                        <p>
+                            Build the programming foundation
+                            required for AI and machine learning.
+                        </p>
+
+                        <button
+                            onclick="openPassword(1)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 2 -->
+
+                <div class="roadmap-level level-right level-2">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(2)">
+                        02
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-2">
+
+                        <div class="reveal-tag">
+                            LEVEL 02
+                        </div>
+
+                        <h2>
+                            Python for AI
+                        </h2>
+
+                        <p>
+                            Learn Python concepts and libraries
+                            used in AI development.
+                        </p>
+
+                        <button
+                            onclick="openPassword(2)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 3 -->
+
+                <div class="roadmap-level level-left level-3">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(3)">
+                        03
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-3">
+
+                        <div class="reveal-tag">
+                            LEVEL 03
+                        </div>
+
+                        <h2>
+                            Mathematics for AI
+                        </h2>
+
+                        <p>
+                            Explore the mathematical foundations
+                            behind AI and machine learning.
+                        </p>
+
+                        <button
+                            onclick="openPassword(3)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 4 -->
+
+                <div class="roadmap-level level-right level-4">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(4)">
+                        04
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-4">
+
+                        <div class="reveal-tag">
+                            LEVEL 04
+                        </div>
+
+                        <h2>
+                            Machine Learning
+                        </h2>
+
+                        <p>
+                            Understand machine learning concepts,
+                            algorithms and workflows.
+                        </p>
+
+                        <button
+                            onclick="openPassword(4)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 5 -->
+
+                <div class="roadmap-level level-left level-5">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(5)">
+                        05
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-5">
+
+                        <div class="reveal-tag">
+                            LEVEL 05
+                        </div>
+
+                        <h2>
+                            Data & Model Training
+                        </h2>
+
+                        <p>
+                            Learn data preparation, model training
+                            and evaluation workflows.
+                        </p>
+
+                        <button
+                            onclick="openPassword(5)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 6 -->
+
+                <div class="roadmap-level level-right level-6">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(6)">
+                        06
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-6">
+
+                        <div class="reveal-tag">
+                            LEVEL 06
+                        </div>
+
+                        <h2>
+                            Deep Learning
+                        </h2>
+
+                        <p>
+                            Explore neural networks and deep learning
+                            architectures.
+                        </p>
+
+                        <button
+                            onclick="openPassword(6)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 7 -->
+
+                <div class="roadmap-level level-left level-7">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(7)">
+                        07
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-7">
+
+                        <div class="reveal-tag">
+                            LEVEL 07
+                        </div>
+
+                        <h2>
+                            Computer Vision
+                        </h2>
+
+                        <p>
+                            Learn how AI systems understand
+                            and process visual information.
+                        </p>
+
+                        <button
+                            onclick="openPassword(7)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 8 -->
+
+                <div class="roadmap-level level-right level-8">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(8)">
+                        08
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-8">
+
+                        <div class="reveal-tag">
+                            LEVEL 08
+                        </div>
+
+                        <h2>
+                            Natural Language Processing
+                        </h2>
+
+                        <p>
+                            Understand how AI systems process
+                            and work with human language.
+                        </p>
+
+                        <button
+                            onclick="openPassword(8)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 9 -->
+
+                <div class="roadmap-level level-left level-9">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(9)">
+                        09
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-9">
+
+                        <div class="reveal-tag">
+                            LEVEL 09
+                        </div>
+
+                        <h2>
+                            Generative AI
+                        </h2>
+
+                        <p>
+                            Explore modern generative AI systems,
+                            models and applications.
+                        </p>
+
+                        <button
+                            onclick="openPassword(9)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEVEL 10 -->
+
+                <div class="roadmap-level level-right level-10">
+
+                    <button
+                        class="level-circle"
+                        onclick="selectLevel(10)">
+                        10
+                    </button>
+
+                    <div
+                        class="level-reveal"
+                        id="reveal-10">
+
+                        <div class="reveal-tag">
+                            LEVEL 10
+                        </div>
+
+                        <h2>
+                            AI Capstone
+                        </h2>
+
+                        <p>
+                            Bring your AI / ML knowledge together
+                            through a final capstone journey.
+                        </p>
+
+                        <button
+                            onclick="openPassword(10)">
+                            ACCESS LEVEL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         PROFILE PAGE
+         ===================================================== -->
+
+    <main id="profilePage" class="page">
+
+        <div class="profile-wrapper">
+
+            <div class="section-label">
+                NEXORA / STUDENT PROFILE
+            </div>
+
+            <h1>
+                YOUR <span>PROFILE</span>
+            </h1>
+
+
+            <div class="profile-card">
+
+                <div class="profile-avatar" id="profileAvatar">
+                    ST
+                </div>
+
+
+                <div class="profile-details">
+
+                    <label for="studentName">
+                        STUDENT NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your name">
+
+                    <button
+                        class="primary-button"
+                        onclick="saveProfile()">
+                        SAVE PROFILE
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-stats">
+
+                <div>
+
+                    <span>
+                        COMPLETED LEVELS
+                    </span>
+
+                    <strong id="profileCompleted">
+                        0 / 10
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        PROGRESS
+                    </span>
+
+                    <strong id="profileProgress">
+                        0%
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        TOTAL XP
+                    </span>
+
+                    <strong id="profileXP">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         PASSWORD MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="passwordModal">
+
+        <div class="password-modal">
+
+            <button
+                class="close-modal"
+                onclick="closePassword()">
+                ×
+            </button>
+
+
+            <div class="security-icon">
+                LOCK
+            </div>
+
+            <div class="modal-tag">
+                SECURE ACCESS
+            </div>
+
+            <h2>
+                LEVEL <span id="passwordLevel">01</span>
+            </h2>
+
+            <p>
+                Enter the password assigned to this
+                AI / ML learning level.
+            </p>
+
+
+            <div class="selected-level">
+
+                SELECTED LEVEL:
+
+                <strong id="selectedLevelName">
+                    Python Foundation
+                </strong>
+
+            </div>
+
+
+            <input
+                type="password"
+                id="levelPassword"
+                placeholder="ENTER PASSWORD"
+                autocomplete="off">
+
+
+            <button
+                class="access-button"
+                onclick="verifyPassword()">
+
+                VERIFY & ENTER
+
+            </button>
+
+
+            <div
+                class="password-error"
+                id="passwordError">
+
+                ACCESS DENIED
+
+            </div>
+
+
+            <div class="demo-hint">
+                Password access is currently configured
+                by the NEXORA system.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SUCCESS MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="successModal">
+
+        <div class="success-modal">
+
+            <button
+                class="close-modal"
+                onclick="closeSuccess()">
+                ×
+            </button>
+
+
+            <div class="success-symbol">
+                ✓
+            </div>
+
+            <div class="modal-tag">
+                ACCESS GRANTED
+            </div>
+
+            <h2>
+                LEVEL UNLOCKED
+            </h2>
+
+            <p id="successMessage">
+                Welcome to the learning module.
+            </p>
+
+            <button
+                class="access-button"
+                onclick="enterModule()">
+
+                ENTER MODULE →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast"
+        id="toast">
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="aiml-dashboard.js"></script>
+
+</body>
+
+</html>
